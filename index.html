@@ -328,8 +328,11 @@
                 return;
             }
 
+            const hitCount = Array.isArray(data) ? data.length : 0;
+            const titleText = `Hasil Pencarian (${hitCount} Data)`;
+
             // Table view
-            let tableHtml = "<h2>Hasil Pencarian</h2>";
+            let tableHtml = `<h2>${titleText}</h2>`;
             tableHtml += "<table>";
             tableHtml += "<thead><tr>";
             tableHtml += "<th>Nama</th>";
@@ -343,7 +346,7 @@
             tableHtml += "</tr></thead><tbody>";
 
             // Card view
-            let cardHtml = "<h2>Hasil Pencarian</h2>";
+            let cardHtml = `<h2>${titleText}</h2>`;
 
             data.forEach(row=>{
                 // Format tanggal
